@@ -1,0 +1,14 @@
+html, body { 
+  height: 100%; 
+}
+
+h1{
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 50px;
+}
+
+.display{
+  display: inline;
+  font-family: 'Indie Flower', cursive;
+  font-weight: bold;
+}

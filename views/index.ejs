@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Content Type Meta tag -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--Responsive Viewport Meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet"
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Google Api -->
+    <script src='https://apis.google.com/js/api.js'></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    
+    <title>Weather API</title>
+
+    <!-- Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="/css/style.css" />
+    
+  </head>
+
+  <body>
+    <div class="container-fluid bg-warning d-flex justify-content-center align-items-center h-100">
+      <div class="m-5 p-5 text-center">
+        <div class="border border-primary bg-primary rounded-top">
+          <h1 class="mt-2">WEATHER APP</h1>
+        </div>
+        <div class="border border-primary bg-light">
+          <form action="/" method="POST" class="form-inline my-5">
+            <div class="container input-group">
+              <input type="text" placeholder="Enter City" class="form-control" name="city">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-primary search"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </form>
+          <% if(weather !== null){ %>
+            <div class="mb-5">
+              <h3 class="display">City: </h3><p class="display"><%= weather.cityName %></p>
+              <br>
+              <h3 class="display">Country: </h3><p class="display"><%= weather.country %></p>
+              <br>
+              <h3 class="display">Temperature: </h3><p class="display"><%= weather.temperature %> &#8451</p>
+              <br>
+              <h3 class="display">Weather: </h3><p class="display"><%= weather.condition %></p>
+            </div>
+          <% } %>
+          <% if(error !== null){ %>
+            <div class="mb-5 display">
+              <p><%= error %></p>
+            </div>
+          <% } %>
+        </div>
+        <div class="border border-primary bg-primary rounded-bottom">
+          <h1 class="px-4 mt-2">USING NODEJS AND EXPRESSJS</h1>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
